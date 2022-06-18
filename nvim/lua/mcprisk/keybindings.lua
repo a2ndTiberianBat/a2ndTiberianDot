@@ -49,7 +49,9 @@ keybind("n", "<A-j>", ":m .+1<CR>", opts)
 -- Insert Mode Keybindings --
 -----------------------------
 -- Exit Insert Mode
-keybind("i", "<C-j>", "<ESC>", opts)
+keybind("i", "ii", "<ESC>", opts)
+keybind("i", "jk", "<ESC>", opts)
+keybind("i", "kj", "<ESC>", opts)
 -- Move Line of Text
 keybind("i", "<A-j>", "<ESC>:m .+1<CR>==gi", opts)
 keybind("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
@@ -57,7 +59,7 @@ keybind("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
 -- Visual Mode Keybindings --
 -----------------------------
 -- Exit Visual Mode
-keybind("v", "<C-j>", "<ESC>", opts)
+keybind("v", "vv", "<ESC>", opts)
 -- Move Text Blocks
 keybind("v", "<A-j>", ":m '>+1<CR>gv=gv", opts)
 keybind("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
