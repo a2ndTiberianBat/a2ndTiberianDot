@@ -9,11 +9,8 @@ o.expandtab = true
 o.hlsearch = true
 o.ignorecase = true
 o.iskeyword:append "-"
-o.mouse = "a"
 o.number = true
 o.numberwidth = 4
--- Add the following to keybind in the future:
--- o.relativenumber = true
 o.pumheight = 10
 o.scrolloff = 8
 o.shiftround = true
@@ -31,7 +28,7 @@ o.splitright = true
 o.swapfile = false
 o.tabstop = 4
 o.termguicolors = true
-o.timeoutlen = 100
+o.timeoutlen = 500
 o.undofile = true
 o.whichwrap:append "h,l,<,>,[,]"
 o.wrap = false
