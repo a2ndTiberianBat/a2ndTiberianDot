@@ -1,5 +1,8 @@
 - defaults:
-  link:
-    relink: true
-
+    link:
+      relink: true
+      create: true
 - clean: ['~']
+
+- link:
+    $XDG_CONFIG_HOME/nvim: nvim
