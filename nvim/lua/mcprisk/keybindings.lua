@@ -65,3 +65,6 @@ keybind("v", "<A-k>", ":m '<-2<CR>gv=gv", opts)
 -- Stay in Visual Mode when Indenting
 keybind("v", "<", "<gv", opts)
 keybind("v", ">", ">gv", opts)
+-- Quick tabbing
+keybind("v", ",", "<", opts)
+keybind("v", ".", ">", opts)
