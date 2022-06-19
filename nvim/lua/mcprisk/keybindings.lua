@@ -6,7 +6,7 @@ local keybind = vim.api.nvim_set_keymap
 ---------------------
 -- Local Functions --
 ---------------------
-function MouseToggle()
+local function MouseToggle()
     if(vim.api.nvim_eval([[&mouse]]) == 'a')
     then
         vim.opt.mouse = ''
@@ -45,6 +45,9 @@ keybind("n", "<leader>c", ":noh<CR>", opts)
 -- Move Line of Text
 keybind("n", "<A-k>", ":m .-2<CR>", opts)
 keybind("n", "<A-j>", ":m .+1<CR>", opts)
+-- Use Shift-V Visual Mode by Default
+keybind("n", "v", "V", opts)
+keybind("n", "V", "v", opts)
 -----------------------------
 -- Insert Mode Keybindings --
 -----------------------------

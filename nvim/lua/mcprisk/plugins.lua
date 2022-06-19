@@ -11,11 +11,17 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Ensure Packer is properly installed
-local packer_present, packer = pcall(require, "packer")
-if not packer_present then
-    vim.notify("Packer not installed!")
-    return
-end
+local packer = preq("packer", "plugins.lua")
+if not packer then return end
+
+-- Have packer use a popup window
+packer.init {
+    display = {
+        open_fn = function()
+            return require("packer.util").float { border = "rounded" }
+        end,
+    },
+}
 
 -- Install Plugins
 return packer.startup(function(use)
@@ -32,9 +38,14 @@ return packer.startup(function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-cmdline"
     use "saadparwaiz1/cmp_luasnip"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
     -- snippets
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim", 
         run = "cd app && npm install",
@@ -43,6 +54,6 @@ return packer.startup(function(use)
     })
     -- Sync Packer after Cloning
     if PACKER_BOOTSTRAP then
-        require("packer").sync()
+        packer.sync()
     end
 end)
