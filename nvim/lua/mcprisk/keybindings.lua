@@ -49,7 +49,6 @@ keybind("n", "<A-j>", ":m .+1<CR>", opts)
 -- Insert Mode Keybindings --
 -----------------------------
 -- Exit Insert Mode
-keybind("i", "ii", "<ESC>", opts)
 keybind("i", "jk", "<ESC>", opts)
 keybind("i", "kj", "<ESC>", opts)
 -- Move Line of Text

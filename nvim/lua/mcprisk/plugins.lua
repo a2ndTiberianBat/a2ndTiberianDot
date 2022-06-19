@@ -10,27 +10,37 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     vim.cmd [[packadd packer.nvim]]
 end
 
--- Use a protected call to avoid error on first use
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
+-- Ensure Packer is properly installed
+local packer_present, packer = pcall(require, "packer")
+if not packer_present then
+    vim.notify("Packer not installed!")
     return
 end
 
 -- Install Plugins
 return packer.startup(function(use)
+    -- Packer and Resources
     use "wbthomason/packer.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
-
+    -- Colorschemes
     use "EdenEast/nightfox.nvim"
     use "lunarvim/colorschemes"
-
+    -- cmp
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "saadparwaiz1/cmp_luasnip"
+    -- snippets
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+    -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim", 
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     })
-
+    -- Sync Packer after Cloning
     if PACKER_BOOTSTRAP then
         require("packer").sync()
     end

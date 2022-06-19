@@ -1,4 +1,5 @@
 require "mcprisk.autocommands"
+require "mcprisk.cmp"
 require "mcprisk.colorscheme"
 require "mcprisk.keybindings"
 require "mcprisk.options"

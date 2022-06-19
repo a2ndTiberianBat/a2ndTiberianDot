@@ -14,5 +14,5 @@ These will be added to the install script in the future.
 - npm
 
 ### References:
-[LunarVim/Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
-
+- [Neovim-from-scratch](https://github.com/LunarVim/Neovim-from-scratch)
+- [Dotbot](https://github.com/anishathalye/dotbot)
