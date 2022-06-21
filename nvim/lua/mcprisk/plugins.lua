@@ -49,6 +49,11 @@ return packer.startup(function(use)
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
     use "BurntSushi/ripgrep"
+    -- Treesitter
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
