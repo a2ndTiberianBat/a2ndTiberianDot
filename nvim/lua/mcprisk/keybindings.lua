@@ -6,12 +6,21 @@ local keybind = vim.api.nvim_set_keymap
 ---------------------
 -- Local Functions --
 ---------------------
-local function MouseToggle()
+function MouseToggle()
     if(vim.api.nvim_eval([[&mouse]]) == 'a')
     then
-        vim.opt.mouse = ''
+         vim.opt.mouse = ''
     else
         vim.opt.mouse = 'a'
+    end
+end
+
+function LightModeToggle()
+    if(vim.api.nvim_eval([[&background]]) == "light")
+    then
+        vim.opt.background = "dark"
+    else
+        vim.opt.background = "light"
     end
 end
 ---------------------------
@@ -40,6 +49,8 @@ keybind("n", "<c-Right>", ":vertical resize -2<cr>", opts)
 keybind("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- Toggle Mouse Support
 keybind("n", "<leader>m", ":lua MouseToggle()<CR>", opts)
+-- Toggle Light Mode
+keybind("n", "<leader>/", ":lua LightModeToggle()<CR>", opts)
 -- Deactivate Highlighting Until Next Search
 keybind("n", "<leader>c", ":noh<CR>", opts)
 -- Move Line of Text

@@ -30,8 +30,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     -- Colorschemes
-    use "EdenEast/nightfox.nvim"
-    use "lunarvim/colorschemes"
+    use "folke/tokyonight.nvim"
     -- cmp
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
@@ -47,7 +46,7 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
     -- Markdown Previewer
-    use({ "iamcco/markdown-preview.nvim", 
+    use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
