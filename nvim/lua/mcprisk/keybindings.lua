@@ -46,9 +46,6 @@ keybind("n", "<C-t>", ":Telescope live_grep<cr>", opts)
 -----------------------------
 -- Insert Mode Keybindings --
 -----------------------------
--- Exit Insert Mode
-keybind("i", "jk", "<ESC>", opts)
-keybind("i", "kj", "<ESC>", opts)
 -- Move Line of Text
 keybind("i", "<A-j>", "<ESC>:m .+1<CR>==gi", opts)
 keybind("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)

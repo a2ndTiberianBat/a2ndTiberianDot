@@ -63,6 +63,9 @@ return packer.startup(function(use)
         setup = function() vim.g.mkdp_filetypes = { "markdown" } end,
         ft = { "markdown" },
     })
+    -- QOL Improvements
+    use "jghauser/mkdir.nvim"
+    use "max397574/better-escape.nvim"
     -- Sync Packer after Cloning
     if PACKER_BOOTSTRAP then
         packer.sync()
