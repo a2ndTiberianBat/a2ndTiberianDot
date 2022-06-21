@@ -22,9 +22,9 @@ keybind("n", "<C-k>", "<C-w>k", opts)
 keybind("n", "<C-l>", "<C-w>l", opts)
 -- Window Resizing (Arrow Keys)
 keybind("n", "<C-Up>", ":resize -2<CR>", opts)
-keybind("n", "<c-Down>", ":resize +2<cr>", opts)
-keybind("n", "<c-Left>", ":vertical resize +2<cr>", opts)
-keybind("n", "<c-Right>", ":vertical resize -2<cr>", opts)
+keybind("n", "<C-Down>", ":resize +2<cr>", opts)
+keybind("n", "<C-Left>", ":vertical resize +2<cr>", opts)
+keybind("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 -- Toggle Relative Line Numbers
 keybind("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- Toggle Mouse Support
@@ -39,6 +39,10 @@ keybind("n", "<A-j>", ":m .+1<CR>", opts)
 -- Use Shift-V Visual Mode by Default
 keybind("n", "v", "V", opts)
 keybind("n", "V", "v", opts)
+-- Telescope Searching
+keybind("n", "<leader>f", ":Telescope find_files<CR>", opts)
+-- keybind("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keybind("n", "<C-t>", ":Telescope live_grep<cr>", opts)
 -----------------------------
 -- Insert Mode Keybindings --
 -----------------------------

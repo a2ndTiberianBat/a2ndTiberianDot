@@ -45,6 +45,10 @@ return packer.startup(function(use)
     -- LSP
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
+    -- Telescope
+    use "nvim-telescope/telescope.nvim"
+    use "nvim-telescope/telescope-media-files.nvim"
+    use "BurntSushi/ripgrep"
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",

@@ -1,8 +1,10 @@
 require "mcprisk.functions"
-require "mcprisk.plugins"
+
 require "mcprisk.autocommands"
 require "mcprisk.cmp"
 require "mcprisk.colorscheme"
 require "mcprisk.keybindings"
-require "mcprisk.options"
 require "mcprisk.lsp"
+require "mcprisk.options"
+require "mcprisk.plugins"
+require "mcprisk.telescope"
