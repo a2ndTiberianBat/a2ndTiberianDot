@@ -58,7 +58,7 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
     -- Comments
-    -- use "numToStr/Comment.nvim"
+    use "numToStr/Comment.nvim"
     use "JoosepAlviste/nvim-ts-context-commentstring"
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim",
@@ -67,6 +67,7 @@ return packer.startup(function(use)
         ft = { "markdown" },
     })
     -- QOL Improvements
+    use "windwp/nvim-autopairs"
     use "jghauser/mkdir.nvim"
     use "max397574/better-escape.nvim"
     use "rcarriga/nvim-notify"

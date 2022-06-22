@@ -1,6 +1,7 @@
 require "mcprisk.functions"
 
 require "mcprisk.autocommands"
+require "mcprisk.autopairs"
 require "mcprisk.cmp"
 require "mcprisk.colorscheme"
 require "mcprisk.comment"
