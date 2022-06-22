@@ -67,6 +67,32 @@ tree.setup {
         number = false,
         relativenumber = false,
     },
+    renderer = {
+        icons = {
+            glyphs = {
+                default = "",
+                symlink = "",
+                git = {
+                    unstaged = "",
+                    staged = "",
+                    unmerged = "",
+                    renamed = "",
+                    deleted = "",
+                    untracked = "",
+                    ignored = "◌",
+                },
+                folder = {
+                    default = "",
+                    open = "",
+                    empty = "",
+                    empty_open = "",
+                    symlink = "",
+                },
+            },
+            webdev_colors = true,
+        },
+        highlight_git = true,
+    },
     trash = {
         cmd = "trash",
         require_confirm = true,
