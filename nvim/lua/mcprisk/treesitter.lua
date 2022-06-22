@@ -15,6 +15,6 @@ ts_configs.setup {
     },
     indent = {
         enable = true,
-        disable = { "" }
+        disable = { "lua" }
     },
 }
