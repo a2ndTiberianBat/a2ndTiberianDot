@@ -1,6 +1,14 @@
-local comment = preq("Comment", "comment.lua")
-local ts_context = preq("ts_context_commentstring", "comment.lua")
-if not comment or not ts_context then return end
+local present, comment = pcall(require, "Comment")
+if not present then
+    DefaultError("Comment", "comment.lua")
+    return
+end
+
+local present, _ = pcall(require, "ts_context_commentstring")
+if not present then
+    DefaultError("ts_context_commentstring", "comment.lua")
+    return
+end
 
 comment.setup {
     pre_hook = function(ctx)

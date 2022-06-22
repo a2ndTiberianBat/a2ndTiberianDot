@@ -82,7 +82,11 @@ end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-local cmp_nvim_lsp = preq("cmp_nvim_lsp", "/lsp/handles.lua")
-if cmp_nvim_lsp then M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities) end
+local present, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+if not present then
+    DefaultError("cmp_nvim_lsp", "/lsp/handles.lua")
+else
+    M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+end
 
 return M

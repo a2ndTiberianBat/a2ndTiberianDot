@@ -1,16 +1,24 @@
--- preq makes a protected require call to the provided requirement
--- and returns the result on success, otherwise notifies the user
--- with an error message and returns nil.
-function preq(requirement, file)
-    local present, object = pcall(require, requirement)
-    if not present then
+-- DefaultError handles all errors thrown by pcalls
+-- throughout this configuration.
+function DefaultError(requirement, file)
+    local present, notify = pcall(require, "notify")
+    if present then
+        notify(
+            "Error: Plugin \"" .. requirement .. "\" not found!",
+            "error",
+            { title = file, }
+        )
+        notify(
+            "Reverted to Default Configuration.",
+            "warn",
+            { title = file, }
+        )
+    else
         vim.notify(
             "Error: " .. requirement .. " not found!\n" ..
             "Required by " .. file .. " - Skipping Operation."
         )
-        return nil
     end
-    return object
 end
 -- toggle will alternate between the two provided values
 -- for a given setting.

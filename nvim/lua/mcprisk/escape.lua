@@ -1,6 +1,9 @@
--- local escape = preq("better_escape", "escape.lua")
--- if not escape then return end
+local present, escape = pcall(require, "better_escape")
+if not present then
+    DefaultError("better_escape", "escape.lua")
+    return
+end
 
-require("better_escape").setup {
+escape.setup {
     mapping = { "jk", "kj", "jj" },
 }

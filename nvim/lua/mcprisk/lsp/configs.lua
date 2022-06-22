@@ -1,7 +1,15 @@
 -- Ensure both the lsp_installer and lspconfig modules are present
-local lsp_installer = preq("nvim-lsp-installer", "lsp/configs.lua")
-local lspconfig = preq("lspconfig", "lsp/configs.lua")
-if not lsp_installer or not lspconfig then return end
+local present, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not present then
+    DefaultError("nvim-lsp-installer", "lsp/configs.lua")
+    return
+end
+
+local present, lspconfig = pcall(require, "lspconfig")
+if not present then
+    DefaultError("lspconfig", "lsp/configs.lua")
+    return
+end
 
 local servers = { "sumneko_lua" }
 

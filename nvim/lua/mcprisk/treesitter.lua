@@ -1,7 +1,10 @@
-local configs = preq("nvim-treesitter.configs", "treesitter.lua")
-if not configs then return end
+local present, ts_configs = pcall(require, "nvim-treesitter.configs")
+if not present then
+    DefaultError("nvim-treesitter.configs", "treesitter.lua")
+    return
+end
 
-configs.setup {
+ts_configs.setup {
     ensure_installed = "all",
     sync_install = false,
     ignore_install = { "" },

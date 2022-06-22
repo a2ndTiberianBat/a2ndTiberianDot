@@ -1,9 +1,15 @@
 -- Ensure nvim-cmp and LuaSnip are present
-local cmp = preq("cmp", "cmp.lua")
-if not cmp then return end
+local present, cmp = pcall(require, "cmp")
+if not present then
+    DefaultError("cmp", "cmp.lua")
+    return
+end
 
-local luasnip = preq("luasnip", "cmp.lua")
-if not luasnip then return end 
+local present, luasnip = pcall(require, "luasnip")
+if not present then
+    DefaultError("luasnip", "cmp.lua")
+    return
+end
 
 require("luasnip/loaders/from_vscode").lazy_load()
 

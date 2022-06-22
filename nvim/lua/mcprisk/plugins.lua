@@ -11,8 +11,11 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Ensure Packer is properly installed
-local packer = preq("packer", "plugins.lua")
-if not packer then return end
+local present, packer = pcall(require, "packer")
+if not present then
+    DefaultError("packer", "plugins.lua")
+    return
+end
 
 -- Have packer use a popup window
 packer.init {
@@ -55,7 +58,7 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
     -- Comments
-    use "numToStr/Comment.nvim"
+    -- use "numToStr/Comment.nvim"
     use "JoosepAlviste/nvim-ts-context-commentstring"
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim",
@@ -66,6 +69,7 @@ return packer.startup(function(use)
     -- QOL Improvements
     use "jghauser/mkdir.nvim"
     use "max397574/better-escape.nvim"
+    use "rcarriga/nvim-notify"
     -- Sync Packer after Cloning
     if PACKER_BOOTSTRAP then
         packer.sync()
