@@ -1,12 +1,12 @@
 -- Ensure nvim-cmp and LuaSnip are present
-local present, cmp = pcall(require, "cmp")
-if not present then
+local cmp_present, cmp = pcall(require, "cmp")
+if not cmp_present then
     DefaultError("cmp", "cmp.lua")
     return
 end
 
-local present, luasnip = pcall(require, "luasnip")
-if not present then
+local luasnip_present, luasnip = pcall(require, "luasnip")
+if not luasnip_present then
     DefaultError("luasnip", "cmp.lua")
     return
 end

@@ -11,8 +11,8 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 -- Ensure Packer is properly installed
-local present, packer = pcall(require, "packer")
-if not present then
+local packer_present, packer = pcall(require, "packer")
+if not packer_present then
     DefaultError("packer", "plugins.lua")
     return
 end
@@ -32,6 +32,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
+    use "kyazdani42/nvim-web-devicons"
     -- Colorschemes
     use "folke/tokyonight.nvim"
     -- cmp
@@ -57,6 +58,8 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
+    -- File Explorer
+    use "kyazdani42/nvim-tree.lua"
     -- Git Integration
     use "lewis6991/gitsigns.nvim"
     -- Comments

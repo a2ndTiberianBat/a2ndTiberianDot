@@ -1,10 +1,10 @@
-local present, aupairs = pcall(require, "nvim-autopairs")
-if not present then
+local pairs_present, pairs = pcall(require, "nvim-autopairs")
+if not pairs_present then
     DefaultError("nvim-autopairs", "autopairs.lua")
     return
 end
 
-aupairs.setup {
+pairs.setup {
     check_ts = true,
     ts_config = {
         lua = { "string", "source" },

@@ -1,8 +1,8 @@
 -- If using Neovim Theme:
 local colorscheme = "tokyonight"
 
-local present, _ = pcall(require, colorscheme)
-if not present then
+local scheme_present, _ = pcall(require, colorscheme)
+if not scheme_present then
     DefaultError(colorscheme, "colorscheme.lua")
     return
 end

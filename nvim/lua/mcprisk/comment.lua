@@ -1,11 +1,11 @@
-local present, comment = pcall(require, "Comment")
-if not present then
+local comment_present, comment = pcall(require, "Comment")
+if not comment_present then
     DefaultError("Comment", "comment.lua")
     return
 end
 
-local present, _ = pcall(require, "ts_context_commentstring")
-if not present then
+local context_present, _ = pcall(require, "ts_context_commentstring")
+if not context_present then
     DefaultError("ts_context_commentstring", "comment.lua")
     return
 end

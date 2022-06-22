@@ -1,12 +1,12 @@
 -- Ensure both the lsp_installer and lspconfig modules are present
-local present, lsp_installer = pcall(require, "nvim-lsp-installer")
-if not present then
+local install_present, lsp_installer = pcall(require, "nvim-lsp-installer")
+if not install_present then
     DefaultError("nvim-lsp-installer", "lsp/configs.lua")
     return
 end
 
-local present, lspconfig = pcall(require, "lspconfig")
-if not present then
+local config_present, lspconfig = pcall(require, "lspconfig")
+if not config_present then
     DefaultError("lspconfig", "lsp/configs.lua")
     return
 end

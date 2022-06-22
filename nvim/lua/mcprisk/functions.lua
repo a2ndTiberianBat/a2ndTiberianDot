@@ -1,8 +1,8 @@
 -- DefaultError handles all errors thrown by pcalls
 -- throughout this configuration.
 function DefaultError(requirement, file)
-    local present, notify = pcall(require, "notify")
-    if present then
+    local notify_present, notify = pcall(require, "notify")
+    if notify_present then
         notify(
             "Error: Plugin \"" .. requirement .. "\" not found!",
             "error",
@@ -22,7 +22,7 @@ function DefaultError(requirement, file)
 end
 -- toggle will alternate between the two provided values
 -- for a given setting.
-function toggle(setting, a, b)
+function Toggle(setting, a, b)
     if(vim.api.nvim_eval('&' .. setting) == a) then
         vim.cmd("set " .. setting .. "=" .. b)
     else

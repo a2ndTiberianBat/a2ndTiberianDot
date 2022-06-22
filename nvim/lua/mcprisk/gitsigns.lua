@@ -1,5 +1,5 @@
-local present, gitsigns = pcall(require, "gitsigns")
-if not present then
+local gitsigns_present, gitsigns = pcall(require, "gitsigns")
+if not gitsigns_present then
     DefaultError("gitsigns", "gitsigns.lua")
     return
 end

@@ -1,5 +1,5 @@
-local present, ts_configs = pcall(require, "nvim-treesitter.configs")
-if not present then
+local configs_present, ts_configs = pcall(require, "nvim-treesitter.configs")
+if not configs_present then
     DefaultError("nvim-treesitter.configs", "treesitter.lua")
     return
 end

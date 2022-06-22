@@ -28,9 +28,9 @@ keybind("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 -- Toggle Relative Line Numbers
 keybind("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- Toggle Mouse Support
-keybind("n", "<leader>m", ":lua toggle(\"mouse\",\"a\",\"\")<CR>", opts)
+keybind("n", "<leader>m", ":lua Toggle(\"mouse\",\"a\",\"\")<CR>", opts)
 -- Toggle Light Mode
-keybind("n", "<leader>/", ":lua toggle(\"background\",\"light\",\"dark\")<CR>", opts)
+keybind("n", "<leader>/", ":lua Toggle(\"background\",\"light\",\"dark\")<CR>", opts)
 -- Deactivate Highlighting Until Next Search
 keybind("n", "<leader>c", ":noh<CR>", opts)
 -- Move Line of Text
@@ -41,8 +41,9 @@ keybind("n", "v", "V", opts)
 keybind("n", "V", "v", opts)
 -- Telescope Searching
 keybind("n", "<leader>f", ":Telescope find_files<CR>", opts)
--- keybind("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keybind("n", "<C-t>", ":Telescope live_grep<cr>", opts)
+keybind("n", "<C-t>", ":Telescope live_grep<CR>", opts)
+-- Open nvim-tree
+keybind("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -----------------------------
 -- Insert Mode Keybindings --
 -----------------------------
