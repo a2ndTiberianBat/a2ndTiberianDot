@@ -58,6 +58,9 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
     }
+    -- Buffer and status lines
+    use "akinsho/bufferline.nvim"
+    use "nvim-lualine/lualine.nvim"
     -- File Explorer
     use "kyazdani42/nvim-tree.lua"
     -- Git Integration
@@ -76,6 +79,7 @@ return packer.startup(function(use)
     use "jghauser/mkdir.nvim"
     use "max397574/better-escape.nvim"
     use "rcarriga/nvim-notify"
+    use "moll/vim-bbye"
     -- Sync Packer after Cloning
     if PACKER_BOOTSTRAP then
         packer.sync()
