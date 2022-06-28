@@ -2,7 +2,7 @@ local o = vim.opt
 
 o.clipboard = "unnamedplus"
 o.cmdheight = 2
-o.completeopt = {"menuone","noselect"}
+o.completeopt = { "menuone", "noselect" }
 o.confirm = true
 o.cursorline = true
 o.expandtab = true

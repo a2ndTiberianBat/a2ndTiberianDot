@@ -1,4 +1,4 @@
-vim.cmd[[
+vim.cmd [[
     augroup DisableAutoComment
         autocmd!
         autocmd BufWinEnter * :set formatoptions-=cro

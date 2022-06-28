@@ -1,4 +1,4 @@
-local telescope_present, telescope = pcall(require,"telescope")
+local telescope_present, telescope = pcall(require, "telescope")
 if not telescope_present then
     DefaultError("telescope", "telescope.lua")
     return
@@ -90,7 +90,7 @@ telescope.setup {
     },
     extensions = {
         media_files = {
-            filetypes = {"png", "webp", "jpg", "jpeg"},
+            filetypes = { "png", "webp", "jpg", "jpeg" },
             find_cmd = "rg"
         }
     },

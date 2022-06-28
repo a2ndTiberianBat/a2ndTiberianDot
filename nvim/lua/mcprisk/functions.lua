@@ -20,10 +20,11 @@ function DefaultError(requirement, file)
         )
     end
 end
+
 -- toggle will alternate between the two provided values
 -- for a given setting.
 function Toggle(setting, a, b)
-    if(vim.api.nvim_eval('&' .. setting) == a) then
+    if (vim.api.nvim_eval('&' .. setting) == a) then
         vim.cmd("set " .. setting .. "=" .. b)
     else
         vim.cmd("set " .. setting .. "=" .. a)

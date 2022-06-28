@@ -28,9 +28,9 @@ keybind("n", "<C-Right>", ":vertical resize -2<cr>", opts)
 -- Toggle Relative Line Numbers
 keybind("n", "<leader>n", ":set relativenumber!<CR>", opts)
 -- Toggle Mouse Support
-keybind("n", "<leader>m", ":lua Toggle(\"mouse\",\"a\",\"\")<CR>", opts)
+keybind("n", "<leader>m", ':lua Toggle("mouse","a","")<CR>', opts)
 -- Toggle Light Mode
-keybind("n", "<leader>/", ":lua Toggle(\"background\",\"light\",\"dark\")<CR>", opts)
+keybind("n", "<leader>/", ':lua Toggle("background","light","dark")<CR>', opts)
 -- Deactivate Highlighting Until Next Search
 keybind("n", "<leader>c", ":noh<CR>", opts)
 -- Move Line of Text

@@ -11,20 +11,20 @@ if not config_present then
     return
 end
 
-local servers = { "sumneko_lua" }
+local servers = { "sumneko_lua", "clangd" }
 
 lsp_installer.setup {
-	ensure_installed = servers
+    ensure_installed = servers
 }
 
 for _, server in pairs(servers) do
-	local opts = {
-		on_attach = require("mcprisk.lsp.handlers").on_attach,
-		capabilities = require("mcprisk.lsp.handlers").capabilities,
-	}
-	local has_custom_opts, server_custom_opts = pcall(require, "mcprisk.lsp.settings." .. server)
-	if has_custom_opts then
-	 	opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
-	end
-	lspconfig[server].setup(opts)
+    local opts = {
+        on_attach = require("mcprisk.lsp.handlers").on_attach,
+        capabilities = require("mcprisk.lsp.handlers").capabilities,
+    }
+    local has_custom_opts, server_custom_opts = pcall(require, "mcprisk.lsp.settings." .. server)
+    if has_custom_opts then
+        opts = vim.tbl_deep_extend("force", server_custom_opts, opts)
+    end
+    lspconfig[server].setup(opts)
 end
