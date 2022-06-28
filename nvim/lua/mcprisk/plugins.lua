@@ -81,7 +81,7 @@ return packer.startup(function(use)
     use "max397574/better-escape.nvim"
     use "rcarriga/nvim-notify"
     use "moll/vim-bbye"
-    -- Sync Packer after Cloning
+    use "lukas-reineke/indent-blankline.nvim"
     if PACKER_BOOTSTRAP then
         packer.sync()
     end
