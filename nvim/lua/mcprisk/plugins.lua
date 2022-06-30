@@ -83,7 +83,6 @@ return packer.startup(function(use)
     use "moll/vim-bbye"
     use "lukas-reineke/indent-blankline.nvim"
     use "lewis6991/impatient.nvim"
-    use "folke/which-key.nvim"
     use "goolord/alpha-nvim"
     if PACKER_BOOTSTRAP then
         packer.sync()
