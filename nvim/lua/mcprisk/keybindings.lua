@@ -52,6 +52,16 @@ keybind("n", "<A-j>", ":m .+1<CR>", opts)
 keybind("n", "<A-k>", ":m .-2<CR>", opts)
 keybind("n", "<A-J>", ":m .+10<CR>", opts)
 keybind("n", "<A-K>", ":m .-11<CR>", opts)
+-- DAP Shortcuts
+keybind("n", "<leader>bb", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", opts)
+keybind("n", "<leader>bc", "<cmd>lua require'dap'.continue()<cr>", opts)
+keybind("n", "<leader>bi", "<cmd>lua require'dap'.step_into()<cr>", opts)
+keybind("n", "<leader>bo", "<cmd>lua require'dap'.step_over()<cr>", opts)
+keybind("n", "<leader>bO", "<cmd>lua require'dap'.step_out()<cr>", opts)
+keybind("n", "<leader>br", "<cmd>lua require'dap'.repl.toggle()<cr>", opts)
+keybind("n", "<leader>bl", "<cmd>lua require'dap'.run_last()<cr>", opts)
+keybind("n", "<leader>bu", "<cmd>lua require'dapui'.toggle()<cr>", opts)
+keybind("n", "<leader>bt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Telescope Searching
 keybind("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keybind("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
@@ -59,6 +69,8 @@ keybind("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keybind("n", "<leader>fm", ":lua vim.lsp.buf.format { async = true }<CR>", opts)
 -- Open nvim-tree
 keybind("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+-- Comment line
+keybind("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 -- Use Shift-V Visual Mode by Default
 keybind("n", "v", "V", opts)
 keybind("n", "V", "v", opts)
@@ -92,3 +104,4 @@ keybind("v", ".", ">", opts)
 -- Visual Block Mode Keybindings --
 -----------------------------------
 keybind("x", "vv", "<ESC>", opts)
+-- keybind("x", "<leader>/", '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>')

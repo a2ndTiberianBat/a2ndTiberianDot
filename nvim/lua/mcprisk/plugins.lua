@@ -69,6 +69,9 @@ return packer.startup(function(use)
     -- Comments
     use "numToStr/Comment.nvim"
     use "JoosepAlviste/nvim-ts-context-commentstring"
+    -- DAP
+    use 'mfussenegger/nvim-dap'
+    use 'rcarriga/nvim-dap-ui'
     -- Markdown Previewer
     use({ "iamcco/markdown-preview.nvim",
         run = "cd app && npm install",
