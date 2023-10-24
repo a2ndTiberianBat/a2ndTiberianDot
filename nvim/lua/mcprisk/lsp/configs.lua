@@ -11,7 +11,7 @@ if not config_present then
     return
 end
 
-local servers = { "sumneko_lua", "clangd", "pyright" }
+local servers = { "clangd", "pyright" }
 
 lsp_installer.setup {
     ensure_installed = servers

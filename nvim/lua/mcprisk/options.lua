@@ -1,5 +1,6 @@
 local o = vim.opt
 
+o.autochdir = true
 o.clipboard = "unnamedplus"
 o.cmdheight = 2
 o.completeopt = { "menuone", "noselect" }

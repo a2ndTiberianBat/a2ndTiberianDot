@@ -84,7 +84,7 @@ local lsp_present, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
 if not lsp_present then
     DefaultError("cmp_nvim_lsp", "/lsp/handles.lua")
 else
-    M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+    M.capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 end
 
 return M

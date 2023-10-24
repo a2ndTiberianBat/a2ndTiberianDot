@@ -32,6 +32,7 @@ keybind("n", "<C-Down>", ":resize +2<CR>", opts)
 keybind("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 keybind("n", "<C-Right>", ":vertical resize -2<CR>", opts)
 -- Buffer Navigation
+keybind("n", "<C-b>", ":BufferLine")
 keybind("n", "<A-l>", ":BufferLineCycleNext<CR>", opts)
 keybind("n", "<A-h>", ":BufferLineCyclePrev<CR>", opts)
 keybind("n", "<A-L>", ":BufferLineMoveNext<CR>", opts)

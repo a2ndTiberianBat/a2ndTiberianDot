@@ -63,7 +63,15 @@ return packer.startup(function(use)
     use "akinsho/bufferline.nvim"
     use "nvim-lualine/lualine.nvim"
     -- File Explorer
-    use "kyazdani42/nvim-tree.lua"
+    use {
+    "nvim-neo-tree/neo-tree.nvim",
+        branch = "v3.x",
+        requires = { 
+        "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+        "MunifTanjim/nui.nvim",
+        }
+    }
     -- Git Integration
     use "lewis6991/gitsigns.nvim"
     -- Comments
@@ -87,6 +95,28 @@ return packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use "lewis6991/impatient.nvim"
     use "goolord/alpha-nvim"
+
+    use {
+        "nvim-neorg/neorg",
+        config = function()
+            require('neorg').setup {
+                load = {
+                    ["core.defaults"] = {}, -- Loads default behaviour
+                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
+                    ["core.dirman"] = { -- Manages Neorg workspaces
+                        config = {
+                            workspaces = {
+                                notes = "~/notes",
+                            },
+                        },
+                    },
+                },
+            }
+        end,
+        run = ":Neorg sync-parsers",
+        requires = "nvim-lua/plenary.nvim",
+    }
+
     if PACKER_BOOTSTRAP then
         packer.sync()
     end

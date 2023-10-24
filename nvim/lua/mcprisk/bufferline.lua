@@ -17,7 +17,7 @@ bufferline.setup {
         close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
         right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
 
-        offsets = { { filetype = "NvimTree", text = "File Explorer", text_allign = "center", padding = 1 } },
+        offsets = { { filetype = "neo-tree", text = "File Explorer", text_allign = "center", padding = 1 } },
 
         separator_style = "thin"
     },
