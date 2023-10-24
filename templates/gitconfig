@@ -1,0 +1,14 @@
+[init]
+    defaultBranch = trunk
+    
+[commit]
+	gpgsign = true
+
+[user]
+    useConfigOnly = true
+
+[include]
+  path = ~/.gitconfig.personal
+
+[includeIf "gitdir:~/Projects/School/"]
+  path = ~/.gitconfig.umich
