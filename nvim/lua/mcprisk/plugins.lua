@@ -47,9 +47,13 @@ return packer.startup(function(use)
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
     -- LSP
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
     use "williamboman/nvim-lsp-installer"
     use "jose-elias-alvarez/null-ls.nvim"
+    -- GDB
+    use 'sakhnik/nvim-gdb'
     -- Telescope
     use "nvim-telescope/telescope.nvim"
     use "nvim-telescope/telescope-media-files.nvim"
@@ -95,27 +99,14 @@ return packer.startup(function(use)
     use "lukas-reineke/indent-blankline.nvim"
     use "lewis6991/impatient.nvim"
     use "goolord/alpha-nvim"
-
+    -- Neorg
     use {
         "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.concealer"] = {}, -- Adds pretty icons to your documents
-                    ["core.dirman"] = { -- Manages Neorg workspaces
-                        config = {
-                            workspaces = {
-                                notes = "~/notes",
-                            },
-                        },
-                    },
-                },
-            }
-        end,
         run = ":Neorg sync-parsers",
         requires = "nvim-lua/plenary.nvim",
     }
+    -- Toggleterm
+    use "akinsho/toggleterm.nvim"
 
     if PACKER_BOOTSTRAP then
         packer.sync()

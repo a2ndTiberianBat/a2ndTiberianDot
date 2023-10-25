@@ -69,6 +69,8 @@ keybind("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
 keybind("n", "<leader>fm", ":lua vim.lsp.buf.format { async = true }<CR>", opts)
 -- Open NeoTree
 keybind("n", "<leader>e", ":Neotree toggle <CR>", opts)
+-- Lazyterm
+keybind("n", "<leader>r", ":lua _lazygit_toggle() <CR>", opts)
 -- Comment line
 keybind("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
 -- Use Shift-V Visual Mode by Default

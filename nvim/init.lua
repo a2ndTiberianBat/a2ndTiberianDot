@@ -1,5 +1,7 @@
 require "mcprisk.functions"
 
+require "mcprisk.toggleterm"
+require "mcprisk.neorg"
 require "mcprisk.tree"
 require "mcprisk.alpha"
 require "mcprisk.autocommands"
