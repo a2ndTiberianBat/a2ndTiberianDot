@@ -1,5 +1,7 @@
 local o = vim.opt
 
+o.conceallevel = 1
+o.concealcursor:append "n"
 o.hidden = true
 o.clipboard = "unnamedplus"
 o.cmdheight = 2

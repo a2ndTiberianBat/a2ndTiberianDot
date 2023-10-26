@@ -7,16 +7,22 @@ end
 neorg.setup {
     load = {
         ["core.defaults"] = {}, -- Loads default behaviour
-        ["core.concealer"] = {}, -- Adds pretty icons to your documents
+        ["core.concealer"] = {
+            config = {
+                icon_preset="diamond",
+            },
+        }, -- Adds pretty icons to your documents
         ["core.dirman"] = { -- Manages Neorg workspaces
             config = {
                 workspaces = {
                     notes = "~/notes",
                     wiki = "~/wiki",
                 },
-            },
+                autodetect = true,
+                autochdir = true,           },
         },
         ["core.ui.calendar"] = {},
+        ["core.summary"] = {},
         ["core.completion"] = { 
             config = { engine = "nvim-cmp" }, 
         },
@@ -36,6 +42,6 @@ neorg.setup {
                     keybinds.map("norg", "n", "<leader>njy", '<cmd>Neorg journal yesterday<cr>')
                 end,
             }
-        }
+        },
     }
 }
