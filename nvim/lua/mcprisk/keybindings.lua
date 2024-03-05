@@ -65,11 +65,12 @@ keybind("n", "<leader>bt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 -- Telescope Searching
 keybind("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keybind("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keybind("n", "<leader>fp", ":Telescope projects<CR>", opts)
 -- Formatting
 keybind("n", "<leader>fm", ":lua vim.lsp.buf.format { async = true }<CR>", opts)
 -- Open NeoTree
-keybind("n", "<leader>e", ":Neotree toggle <CR>", opts)
--- Lazyterm
+keybind("n", "<leader>e", ":Neotree toggle reveal_force_cwd <CR>", opts)
+-- Lazygit
 keybind("n", "<leader>r", ":lua _lazygit_toggle() <CR>", opts)
 -- Comment line
 keybind("n", "<leader>/", "<cmd>lua require('Comment.api').toggle_current_linewise()<CR>", opts)
@@ -86,6 +87,14 @@ keybind("i", "<A-j>", "<ESC>:m .+1<CR>==gi", opts)
 keybind("i", "<A-k>", "<ESC>:m .-2<CR>==gi", opts)
 keybind("i", "<A-J>", "<ESC>:m .+10<CR>==gi", opts)
 keybind("i", "<A-K>", "<ESC>:m .-11<CR>==gi", opts)
+-- Copilot
+vim.keymap.set("i", "<C-CR>", "copilot#Accept('')", {
+    expr = true,
+    silent = true,
+    replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
+
 -----------------------------
 -- Visual Mode Keybindings --
 -----------------------------

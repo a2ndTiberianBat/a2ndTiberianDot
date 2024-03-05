@@ -5,6 +5,14 @@ if not neotree_present then
 end
 
       neotree.setup {
+        source_selector = {
+            winbar = true,
+            statusline = true,
+	    sources = {
+		    { source = "filesystem" },
+	        { source = "buffers" },
+	    },
+        },
         close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
         popup_border_style = "rounded",
         enable_git_status = true,
@@ -160,6 +168,7 @@ end
         nesting_rules = {},
         filesystem = {
           filtered_items = {
+            async_directory_scan = true,
             visible = false, -- when true, they will just be displayed differently than normal items
             hide_dotfiles = true,
             hide_gitignored = true,
@@ -183,7 +192,7 @@ end
             },
           },
           follow_current_file = {
-            enabled = false, -- This will find and focus the file in the active buffer every time
+            enabled = true, -- This will find and focus the file in the active buffer every time
             --               -- the current file is changed while the tree is open.
             leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
           },
@@ -229,6 +238,7 @@ end
           commands = {} -- Add a custom command or override a global one using the same function name
         },
         buffers = {
+          bind_to_cwd = true,
           follow_current_file = {
             enabled = true, -- This will find and focus the file in the active buffer every time
             --              -- the current file is changed while the tree is open.

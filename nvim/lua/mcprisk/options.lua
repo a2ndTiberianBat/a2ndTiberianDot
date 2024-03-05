@@ -1,6 +1,6 @@
 local o = vim.opt
 
-o.conceallevel = 1
+o.conceallevel = 2
 o.concealcursor:append "n"
 o.hidden = true
 o.clipboard = "unnamedplus"
@@ -24,7 +24,9 @@ o.showtabline = 2
 o.sidescrolloff = 12
 o.signcolumn = "yes"
 o.smartcase = true
-o.smartindent = true
+o.smartindent = false
+o.autoindent = false
+o.cindent = false
 o.softtabstop = -1
 o.splitbelow = true
 o.splitright = true

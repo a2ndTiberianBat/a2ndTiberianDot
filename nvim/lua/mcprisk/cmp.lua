@@ -115,6 +115,7 @@ cmp.setup {
         { name = "buffer" },
         { name = "path" },
         { name = "neorg" },
+        { name = "copilot" },
     },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,

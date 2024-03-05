@@ -19,10 +19,11 @@ neorg.setup {
                     wiki = "~/wiki",
                 },
                 autodetect = true,
-                autochdir = true,           },
+                autochdir = true,
+            },
         },
-        ["core.ui.calendar"] = {},
         ["core.summary"] = {},
+        ["core.ui.calendar"] = {},
         ["core.completion"] = { 
             config = { engine = "nvim-cmp" }, 
         },

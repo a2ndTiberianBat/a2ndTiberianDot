@@ -19,6 +19,12 @@ bufferline.setup {
 
         offsets = { { filetype = "neo-tree", text = "File Explorer", text_allign = "center", padding = 1 } },
 
-        separator_style = "thin"
+        separator_style = "thin",
+
+custom_filter = function(buf_number)
+		if not not vim.api.nvim_buf_get_name(buf_number):find(vim.fn.getcwd(), 0, true) then
+			return true
+		end
+	end,
     },
 }
